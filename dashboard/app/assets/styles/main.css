@@ -1,0 +1,16 @@
+
+.leftNav a{
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+li.leftNav a:hover{
+  background-color: #ff4d4d;
+  color: white;
+}
+
+li.leftNav.active a{
+  color: red;
+  background-color: white;
+}

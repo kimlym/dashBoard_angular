@@ -1,0 +1,55 @@
+.dropdown{
+  display: inline-block;
+}
+
+#addItem{
+  display: inline-block;
+}
+
+.form-group{
+  float: right;
+}
+
+.list-head{
+  font-weight: bold;
+}
+
+.list-head a{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.list-body a{
+  text-decoration: none;
+  cursor: pointer;
+}
+.grey{
+  background-color: #d9d9d9;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.avatar{
+  margin-top:5%
+}
+.avatar>img{
+  width: 100%;
+}
+
+.avatar p:nth-child(2){
+  font-weight: bold;
+}
+
+.author{
+  color: green;
+}
+
+p.action{
+  float: right;
+}
+
+.action a, .action a span{
+  text-decoration: none;
+  cursor: pointer;
+}

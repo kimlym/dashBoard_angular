@@ -1,0 +1,29 @@
+.popCard{
+  text-align: center;
+  width: 500px;
+  padding-bottom: 2%;
+}
+
+.popCard .form-group{
+  margin-left: 2%;
+  float: left;
+  width: 96%;
+}
+
+.popCard .form-group .form-control{
+  margin-bottom: 2%;
+}
+
+.popCard .btn-group{
+  float: left;
+  margin-left: 2%;
+}
+
+.btn-group #cancel{
+  margin-left: 5px;
+}
+
+
+.form-group{
+  margin-bottom: 0;
+}

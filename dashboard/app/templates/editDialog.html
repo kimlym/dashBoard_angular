@@ -1,0 +1,16 @@
+<div class="popCard" ng-controller="dialogEditCtrl">
+  <p><h3>Add item</h3></p>
+  <form action="" name="editForm">
+    <div class="form-group">
+      <input type="text" class="form-control"  ng-model="item.title" required>
+      <input type="text" class="form-control"  ng-model="item.author" required>
+      <input type="text" class="form-control"  ng-model="item.like" required>
+      <input type="text" class="form-control"  ng-model="item.comment" required>
+    </div>
+    <div class="btn-group" role="group" aria-label="...">
+      <input type="submit" class="btn btn-success" ng-click="editSingle(editForm)" >
+      <button type="button" class="btn btn-default" ng-click="cancel()" id="cancel">cancel</button>
+    </div>
+  </form>
+</div>
+<link rel="stylesheet" href="../assets/styles/dialog.css">

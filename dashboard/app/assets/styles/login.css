@@ -1,0 +1,28 @@
+body{
+  background-image: url(../images/src/app/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#login{
+  margin-top: 10%;
+  color: white;
+  text-align: center;
+}
+
+.input-group{
+  width: 100%;
+}
+
+#login .form-control{
+  border-radius: 5px;
+}
+
+.btn-group{
+  width: 100%;
+}
+
+#login .btn.btn-success{
+  width: 100%;
+  border-radius: 5px;
+}

@@ -1,0 +1,65 @@
+<div ng-controller="workCtrl">
+  <div class="nav">
+    <form class="navbar-form" role="search">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown-menu">Select Design
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a ng-click="style=0" ng-init="style=1">List</a></li>
+          <li><a ng-click="style=1">Card</a></li>
+        </ul>
+      </div>
+
+      <!-- <md-button type="button" name="button" class="btn btn-danger" ng-click="showAlert($event)">Add Item</md-button> -->
+      <div add-item id="addItem"></div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Name" ng-model="search.title">
+        <input type="text" class="form-control" placeholder="Author" ng-model="search.author">
+        <input type="text" class="form-control" placeholder="Like" ng-model="search.like">
+        <input type="text" class="form-control" placeholder="Comment" ng-model="search.comment">
+      </div>
+    </form>
+  </div>
+
+  <div class="container">
+    <div class="card" ng-show="style==1">
+      <div class="row">
+        <div class="col-md-4" ng-repeat="x in data.works |filter: search">
+          <div card-display></div>
+        </div>
+      </div>
+    </div>
+    <div class="list" ng-show="style==0">
+      <div class="list-head">
+        <div class="row panel-body">
+          <div class="col-md-4">
+            <a ng-click="customOrder('title')">Name</a>
+          </div>
+          <div class="col-md-2">
+            <a ng-click="customOrder('author')">Author</a>
+          </div>
+          <div class="col-md-2">
+            <a ng-click="customOrder('like')">Like</a>
+          </div>
+          <div class="col-md-2">
+            <a ng-click="customOrder('comment')">Comment</a>
+          </div>
+          <div class="col-md-1">
+            <a>Modify</a>
+          </div>
+          <div class="col-md-1">
+            <a>Remove</a>
+          </div>
+        </div>
+      </div>
+      <div class="list-body" >
+        <div class="row panel-body" ng-repeat="x in data.works | orderBy: myOrder | filter: search" ng-class="{grey: $index%2 == 0}">
+          <div list-display></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="../assets/styles/work.css">
