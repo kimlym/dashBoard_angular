@@ -5,7 +5,7 @@
 // Make service calls to log the user out of the app
 // Populate the current date that the user log in
 
-app.controller('rootCtrl',function($scope){
+app.controller('rootCtrl',function($scope,$location,$rootScope,session,login){
   $scope.date = new Date();
   $scope.active = 1;
   $scope.setTab=function(index){
@@ -14,4 +14,10 @@ app.controller('rootCtrl',function($scope){
   $scope.isSet=function(index){
     return $scope.active === index;
   };
+  $scope.logOut = function(){
+    login.logOut();
+    session.destroy();
+    $rootScope.curUser = "";
+    $location.path('');
+  }
 });

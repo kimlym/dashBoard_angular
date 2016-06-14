@@ -1,5 +1,5 @@
 <!--nav bar-->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" id="root">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -14,25 +14,22 @@
       </a>
     </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
 
-          <li><a href="#">Link</a></li>
-          <li>
-            <a href="#">{{date | date:'yyyy-MM-dd'}}</a>
-          </li>
-        </ul>
-        <form class="navbar-form navbar-right" role="search">
-          <button type="submit" class="btn btn-default">Log Out</button>
-        </form>
+        <li><a href="#">{{curUser}}</a></li>
+        <li>
+          <a href="#">{{date | date:'yyyy-MM-dd'}}</a>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <button type="submit" class="btn btn-default" ng-click="logOut()">Log Out</button>
+      </form>
 
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-
-</div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 <!--left-side menu-->
 
@@ -55,17 +52,11 @@
 
 
 
+
+
 <!-- <div ui-view="viewA">12324</div> -->
 <div class="col-md-10" ui-view>
-  <div class="dropdown">
- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
- <span class="caret"></span></button>
- <ul class="dropdown-menu">
-   <li><a href="#">HTML</a></li>
-   <li><a href="#">CSS</a></li>
-   <li><a href="#">JavaScript</a></li>
- </ul>
-</div>
+
 </div>
 
 <link rel="stylesheet" href="assets/styles/main.css">

@@ -52,17 +52,17 @@ app.config(function($stateProvider,$urlRouterProvider){
 
 });
 
-app.run(['$rootScope', '$state', function($rootScope, $state){
-      $rootScope.$on('$stateChangeStart', function(event, toState) {
-        var redirect = toState.redirectTo;
-        if (redirect) {
-          event.preventDefault();
-          if(angular.isFunction(redirect))
-              redirect.call($state);
-          else
-              $state.go(redirect);
-          }
-        });
+app.run(['$rootScope', '$state', function($rootScope, $state,$location){
+  $rootScope.$on('$stateChangeStart', function(event, toState) {
+    var redirect = toState.redirectTo;
+    if (redirect) {
+      event.preventDefault();
+      if(angular.isFunction(redirect))
+          redirect.call($state);
+      else
+          $state.go(redirect);
+    }
+  });
 }]);
 
 
