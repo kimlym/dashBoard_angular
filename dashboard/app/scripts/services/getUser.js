@@ -2,14 +2,12 @@
 // GETUSER SERVICE
 // Description: Define the getUserService that has 1 functionality:
 // making service calls to retrieve the logged-in users' information
-app.service('getUser',function($http){
-  var service={};
-  service.curUser = function(userName){
-    return $http({
-              method: 'GET',
-              url: '/api/getuser',
-              user: userName
-    });
-  }
-  return service;
+app.service('getUser',function($resource){
+  var getUser = $resource('/api/getuser/:name',{user:'@name'});
+  return getUser;
+  // var myuser;
+  // var user;
+  // this.curUser = function(userName){
+  //   return getUser.get({user:userName});
+  // };
 });

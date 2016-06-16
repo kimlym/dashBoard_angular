@@ -7,7 +7,7 @@
  *
  * Main module of the application. Define the routing architecture for the app
  */
-var app = angular.module('myApp',['ui.router','ui.bootstrap','ngMaterial']);
+var app = angular.module('myApp',['ui.router','ui.bootstrap','ngMaterial','ngResource']);
 app.config(function($stateProvider,$urlRouterProvider){
   $urlRouterProvider.otherwise('/login');
   $stateProvider
@@ -52,18 +52,25 @@ app.config(function($stateProvider,$urlRouterProvider){
 
 });
 
-app.run(['$rootScope', '$state', function($rootScope, $state,$location){
-  $rootScope.$on('$stateChangeStart', function(event, toState) {
-    var redirect = toState.redirectTo;
-    if (redirect) {
+app.run(function ($rootScope,$state,login) {
+  $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
+    // var redirect = toState.redirectTo;
+    // if (redirect) {
+    //   event.preventDefault();
+    //   if(angular.isFunction(redirect))
+    //       redirect.call($state);
+    //   else
+    //       $state.go(redirect);
+    // }
+
+    if (!login.islogged() && toState.name !=='login')  {
       event.preventDefault();
-      if(angular.isFunction(redirect))
-          redirect.call($state);
-      else
-          $state.go(redirect);
+      $state.go('login');
     }
   });
-}]);
+
+});
+
 
 
 

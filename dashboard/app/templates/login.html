@@ -5,6 +5,9 @@
       <h2>Login</h2>
       <br/>
       <hr/>
+      <div class="alert alert-danger" ng-show="error" ng-init="error=false" id="logfail">
+        <strong>Wrong user and password combination!</strong> Try again.
+      </div>
       <br/>
       <form action="" name="myform">
         <div class="input-group">
@@ -16,7 +19,7 @@
         </div>
         <br/>
         <div class="btn-group">
-          <input  class="btn btn-success" type="submit" ng-click="validateUser(user,pwd) " value="Login">
+          <input  class="btn btn-success" type="submit" ng-click="validateUser(user,pwd)" value="Login">
         </div>
       </form>
 

@@ -10,15 +10,16 @@ app.controller('loginController',function($scope,$rootScope,$location,login,sess
         "password":pwd
       };
       login.authenticate(mydata).success(function(data){
-        getUser.curUser(user).success(function(res){
-          login.userLog();
-          session.setUser(mydata);
-          $rootScope.curUser = res.name;
+        var current;
+        current = getUser.get({user: user},function(){
+          $rootScope.curUser = current.name;
           $location.path('/root/work');
         });
+        login.userLog();
+        session.setUser(mydata);
+        $scope.error = false;
       }).error(function(){
-        console.log(login.islogged());
-        alert("Wrong username and password combination");
+        $scope.error = true;
       });
     }
   };

@@ -1,7 +1,7 @@
 'use strict';
 // AUTHENTICATE SERVICE
 // Description: Define the authenticateService that has 3 functionalities: login, logout, and islogged
-app.service('login',function($http){
+app.service('login',function($http,session){
   var service={};
   var logged = false;
   service.authenticate = function(mydata){
@@ -22,6 +22,7 @@ app.service('login',function($http){
 
   service.logOut = function(){
     logged = false;
+    session.destroy();
   }
   return service;
 });

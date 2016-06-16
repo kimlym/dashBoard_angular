@@ -10,6 +10,10 @@ body{
   text-align: center;
 }
 
+#logfail{
+  margin-bottom: 0;
+}
+
 .input-group{
   width: 100%;
 }
