@@ -13,7 +13,7 @@ app.controller('loginController',function($scope,$rootScope,$location,login,sess
         var current;
         current = getUser.get({user: user},function(){
           $rootScope.curUser = current.name;
-          $location.path('/root/work');
+          $location.path('/root/overview');
         });
         login.userLog();
         session.setUser(mydata);

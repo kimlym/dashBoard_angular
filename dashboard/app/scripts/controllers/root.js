@@ -7,7 +7,7 @@
 
 app.controller('rootCtrl',function($scope,$location,$rootScope,session,login){
   $scope.date = new Date();
-  $scope.active = 1;
+  $scope.active = 0;
   $scope.setTab=function(index){
     $scope.active = index;
   };

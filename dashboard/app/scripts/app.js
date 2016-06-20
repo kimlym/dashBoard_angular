@@ -7,7 +7,7 @@
  *
  * Main module of the application. Define the routing architecture for the app
  */
-var app = angular.module('myApp',['ui.router','ui.bootstrap','ngMaterial','ngResource']);
+var app = angular.module('myApp',['ui.router','ui.bootstrap','ngMaterial','ngResource','ngAnimate']);
 app.config(function($stateProvider,$urlRouterProvider){
   $urlRouterProvider.otherwise('/login');
   $stateProvider
@@ -47,7 +47,33 @@ app.config(function($stateProvider,$urlRouterProvider){
     })
     .state('root.overview',{
       url: '/overview',
-      template: "This is overview"
+      templateUrl: "templates/overview.html",
+      resolve: {
+        profile: function(getProfile){
+          return getProfile.get().success(function(res){
+            return res.profiles;
+          });
+        }
+      },
+      controller: function(profile,getData){
+        getData.setProData(profile.data.profiles);
+      }
+    })
+    .state('root.contact',{
+      url: '/contact',
+      templateUrl: "templates/contact.html",
+      resolve:{
+        location: function(getContact){
+          return getContact.getLocation();
+        },
+        category: function(getContact){
+          return getContact.getCategory();
+        }
+      },
+      controller: function(location,category,getData){
+        getData.setLocation(location);
+        getData.setCategory(category);
+      }
     });
 
 });

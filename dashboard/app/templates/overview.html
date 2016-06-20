@@ -1,0 +1,21 @@
+<span ng-controller="overviewCtrl">
+  <h2><strong>Overview</strong></h2>
+  <div class="jumbotron">
+    <div class="container">
+      <h3><strong>{{user.username}} - {{user.nickname}}</strong></h3>
+      <div class="row">
+        <div class="col-md-2">
+          <img src="{{user.profileImage}}" alt="" id="portrait">
+        </div>
+      </div>
+      <p>Welcome to dashboard application. This application guide will introduce you to things that you can do while staying here. All the secions mentioned below can be accessed from the navigation menu on the left side</p>
+      <uib-accordion close-others="false">
+        <uib-accordion-group heading="{{panel.heading}}" ng-repeat="panel in panels">
+          {{panel.content}}
+        </uib-accordion-group>
+      </uib-accordion>
+    </div>
+  </div>
+</span>
+
+<link rel="stylesheet" href="assets/styles/overview.css">
