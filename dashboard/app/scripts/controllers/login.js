@@ -3,6 +3,7 @@
 // Description: Define the following functionalities:
 // Making service calls to login a user
 app.controller('loginController',function($scope,$rootScope,$location,login,session,getUser){
+
   $scope.validateUser = function(user,pwd){
     if($scope.myform.$valid){
       var mydata = {

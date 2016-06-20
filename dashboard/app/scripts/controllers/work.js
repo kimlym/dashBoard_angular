@@ -2,7 +2,7 @@
 // WORK CONTROLLER
 // Description: Define the following functionalities:
 // All the functionalities on the "Work" section to display items and filter them
-app.controller('workCtrl',function($scope,fetchWork,$mdDialog,$rootScope){
+app.controller('workCtrl',function($scope,fetchWork,$rootScope){
   fetchWork.getWork().success(function(data){
     $rootScope.data = data;
   });
